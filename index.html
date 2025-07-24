@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Strategic Doctrine Portal</title>
+  <style>
+    body { background-color: black; color: #00FF00; font-family: monospace; padding: 20px; }
+    a { color: #00FF00; text-decoration: none; }
+    button { background-color: black; color: #00FF00; border: 1px solid #00FF00; padding: 10px; font-family: monospace; }
+    .blinking { animation: blink 1s infinite; }
+    @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
+  </style>
+</head>
+<body>
+
+<h2>POST /INITIATE_CAMPAIGN_SEQUENCE</h2>
+<pre>
+AMIBIOS v3.31a (C)1995-2004 Pennsylvania Ops
+POST CHECK... OK
+CPU Detected: Sovereign Intent Unit (PA-2026 Alpha)
+GPU Detected: Commodities Conversion Array
+Memory: Generational Discontent — Indexed
+RAID ARRAY: [POLICY/MEME STRIPE] - OK
+VGA BIOS INIT... OK
+
+>> SYSTEM READY FOR DEPLOYMENT
+</pre>
+
+<pre id="dylan-detect"></pre>
+
+<script>
+  const dylanInfo = "INFERENCE TRIGGERED: PROBABLE IDENTITY MATCH\n\nUSER ENVIRONMENT DETECTED:\n• OS: " + navigator.platform + "\n• Display Resolution: " + screen.width + "x" + screen.height + "\n• Browser: " + navigator.userAgent + "\n\nCONFIDENCE: HIGH\nPSYCHOLOGICAL RESONANCE DETECTED: Campaign Alignment Confirmed\nSTATUS: MONITORING ACTIVE";
+
+  const el = document.getElementById("dylan-detect");
+  let i = 0;
+  function typeNext() {
+    if (i < dylanInfo.length) {
+      el.textContent += dylanInfo.charAt(i++);
+      setTimeout(typeNext, 25);
+    }
+  }
+  setTimeout(typeNext, 3000);
+</script>
+
+<p>[ <a href="/logs.html">View Logs</a> ]</p>
+<p>[ <a href="/manifesto.html">Read Manifesto</a> ]</p>
+
+<button onclick="document.getElementById('bg-audio').play()">Begin Sequence</button>
+<audio id="bg-audio" loop>
+  <source src="your-song.mp3" type="audio/mpeg">
+</audio>
+
+</body>
+</html>
