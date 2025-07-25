@@ -1,12 +1,56 @@
+
 body {
   background-color: black;
   color: #00FF00;
-  font-family: monospace;
-  text-shadow: 0 0 1px #00FF00;
-  animation: flicker 1.5s infinite;
+  font-family: 'Courier New', monospace;
+  text-shadow: 0 0 2px #00FF00;
+  animation: flicker 1.2s infinite;
+  background: url('/media/pa-flag.png') no-repeat center center fixed;
+  background-size: cover;
 }
+
 @keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: 0.97; }
-  100% { opacity: 1; }
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes glitch-flag {
+  0% { background-image: url('/media/pa-flag.png'); }
+  25% { background-image: url('/media/gadsden-flag.png'); }
+  50% { background-image: url('/media/pa-rebellion-flag.png'); }
+  75% { background-image: url('/media/gadsden-flag.png'); }
+  100% { background-image: url('/media/pa-flag.png'); }
+}
+
+body.glitch-flag {
+  animation: glitch-flag 30s infinite;
+}
+
+::selection {
+  background: rgba(0, 255, 0, 0.3);
+}
+
+a, h1, h2, h3, h4, h5, h6, p, pre, button {
+  text-shadow: 0 0 4px #00FF00;
+}
+
+/* Optional scanline overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 0, 0.05),
+    rgba(0, 255, 0, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
 }
