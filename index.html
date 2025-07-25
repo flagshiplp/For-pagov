@@ -42,35 +42,33 @@ VGA BIOS INIT... OK
   setTimeout(typeNext, 3000);
 </script>
 
-<button id="playButton">Begin Sequence</button>
-<audio id="bg-audio" loop>
+<audio id="bg-audio" autoplay loop>
   <source src="Trump.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
 
 <script>
-  document.getElementById("playButton").addEventListener("click", function () {
-    const audio = document.getElementById("bg-audio");
-    audio.play().then(() => {
-      console.log("Audio playback started.");
-    }).catch((err) => {
-      alert("Playback failed. Try clicking again.");
-      console.error("Playback error:", err);
-    });
+  const audio = document.getElementById("bg-audio");
+  audio.play().catch(() => {
+    const button = document.createElement("button");
+    button.textContent = "Begin Sequence";
+    button.onclick = () => audio.play();
+    button.style = "background:black; color:#00FF00; font-family:monospace; border:1px solid #00FF00; padding:10px; margin-top:10px;";
+    document.body.appendChild(button);
   });
 </script>
 
 <hr>
 
 <h3>NAVIGATION</h3>
-<a href="./index.html">/index — Terminal</a>
-<a href="./bios.html">/bios — Boot Screen</a>
-<a href="./logs.html">/logs — Access Logs</a>
-<a href="./manifesto.html">/manifesto — The Doctrine</a>
-<a href="./login.html">/login — Tier III Portal</a>
-<a href="./newswire.html">/newswire — Future Archive</a>
-<a href="./ai_report.html">/ai_report — Behavioral Summary</a>
-<a href="./SovereignDirective_250.txt">/docs — Directive PDF</a>
+<a href="/index.html">/index — Terminal</a>
+<a href="/bios.html">/bios — Boot Screen</a>
+<a href="/logs.html">/logs — Access Logs</a>
+<a href="/manifesto.html">/manifesto — The Doctrine</a>
+<a href="/login.html">/login — Tier III Portal</a>
+<a href="/newswire.html">/newswire — Future Archive</a>
+<a href="/ai_report.html">/ai_report — Behavioral Summary</a>
+<a href="/docs/SovereignDirective_250.pdf">/docs — Directive PDF</a>
 
 </body>
 </html>
