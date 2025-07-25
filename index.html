@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="crt.css">
   <title>Strategic Doctrine Portal</title>
+  <link rel="stylesheet" href="crt.css">
   <style>
     body { background-color: black; color: #00FF00; font-family: monospace; padding: 20px; }
-    a { color: #00FF00; text-decoration: none; }
-    button { background-color: black; color: #00FF00; border: 1px solid #00FF00; padding: 10px; font-family: monospace; }
+    a { color: #00FF00; text-decoration: none; display: block; margin: 5px 0; }
+    button { background-color: black; color: #00FF00; border: 1px solid #00FF00; padding: 10px; font-family: monospace; margin-top: 10px; }
     .blinking { animation: blink 1s infinite; }
     @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
   </style>
@@ -42,13 +42,23 @@ VGA BIOS INIT... OK
   setTimeout(typeNext, 3000);
 </script>
 
-<p>[ <a href="/logs.html">View Logs</a> ]</p>
-<p>[ <a href="/manifesto.html">Read Manifesto</a> ]</p>
-
 <button onclick="document.getElementById('bg-audio').play()">Begin Sequence</button>
 <audio id="bg-audio" loop>
-  <source src="trump.mp3" type="audio/mpeg">
+  <source src="your-song.mp3" type="audio/mpeg">
+  Your browser does not support the audio tag.
 </audio>
+
+<hr>
+
+<h3>NAVIGATION</h3>
+<a href="index.html">/index — Terminal</a>
+<a href="bios.html">/bios — Boot Screen</a>
+<a href="logs.html">/logs — Access Logs</a>
+<a href="manifesto.html">/manifesto — The Doctrine</a>
+<a href="login.html">/login — Tier III Portal</a>
+<a href="newswire.html">/newswire — Future Archive</a>
+<a href="ai_report.html">/ai_report — Behavioral Summary</a>
+<a href="docs/SovereignDirective_250.pdf">/docs — Directive PDF</a>
 
 </body>
 </html>
