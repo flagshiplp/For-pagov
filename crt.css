@@ -27,7 +27,7 @@ body {
 }
 
 body.glitch-flag {
-  animation: glitch-flag 30s infinite;
+  animation: glitch-flag 13s infinite;
 }
 
 ::selection {
