@@ -42,11 +42,31 @@ VGA BIOS INIT... OK
   setTimeout(typeNext, 3000);
 </script>
 
-<button onclick="document.getElementById('bg-audio').play()">Begin Sequence</button>
+
+  
+<button id="playButton">Begin Sequence</button>
+
 <audio id="bg-audio" loop>
   <source src="trump.mp3" type="audio/mpeg">
-  Your browser does not support the audio tag.
+  Your browser does not support the audio element.
 </audio>
+
+<script>
+  document.getElementById("playButton").addEventListener("click", function () {
+    const audio = document.getElementById("bg-audio");
+    audio.play().catch((err) => {
+      alert("Playback failed. Try interacting with the page first.");
+      console.error("Playback error:", err);
+    });
+  });
+</script>
+
+
+  
+
+
+
+  
 
 <hr>
 
