@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="crt.css">
-  <title>AMIBIOS POST</title>
+  <title>System POST</title>
+  <link rel="stylesheet" href="crt-governor.css">
   <meta http-equiv="refresh" content="12;url=index.html">
   <style>
     body { background-color: black; color: #00FF00; font-family: monospace; padding: 20px; }
-    .blinking { animation: blink 1s steps(2, start) infinite; }
-    @keyframes blink { to { visibility: hidden; } }
+    .blinking { animation: blink 1s infinite; }
+    @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0; } 100% { opacity: 1; } }
   </style>
 </head>
 <body>
 <pre>
-AMIBIOS v3.31a (C)1995-2004
+AMIBIOS v3.31a (C)1995-2004 Pennsylvania Ops
 
 POST CHECK... OK
 CPU Detected: Strategic Intent Processor (PA-DECLARATION-250)
@@ -20,16 +20,30 @@ GPU Detected: Visual Sovereignty Unit (Tier III Spec)
 Memory Test: 65536K OK
 Keyboard Detected
 Mouse Detected
+Audio Bus Initialized
+Display Resolution: 1440x900
+
 Initializing COMMSFIREWALL NODE...
-Checking Realism Amplification Modules...
-✓ Retro Analog Layer
-✓ Simulated CRT Output Mode
-✓ National Myth Thread Injection
+✓ Signal Layer Integrity Verified
+✓ Terminal Aesthetic Calibration
+✓ Background Sovereignty Checksums Matched
 
 BOOT DEVICE: \\DECLARATION\DAY\07_25_25.img
 LOADING...
 
 </pre>
+
+<pre id="counter">ACCESS LOG — ENTRY COUNT: ...</pre>
+
+<script>
+fetch('https://api.countapi.xyz/hit/dunn4gov.com/bios')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("counter").textContent =
+      "ACCESS LOG — ENTRY COUNT: " + data.value;
+  });
+</script>
+
 <p class="blinking">PRESS DEL TO ENTER SETUP</p>
 </body>
 </html>
