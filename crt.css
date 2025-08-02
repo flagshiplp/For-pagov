@@ -4,47 +4,42 @@ body {
   color: #00FF00;
   font-family: 'Courier New', monospace;
   text-shadow: 0 0 2px #00FF00;
-  animation: flicker .6s infinite;
-  background: url('/Media/pa-flag.png') no-repeat center center fixed;
-  background-size: cover;
+  background: black;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
   transition: filter 0.23s ease-in-out;
 }
-@keyframes flicker {
-  0%, 100% { opacity: 1; filter: brightness(1); }
-  50%      { opacity: 0.42; filter: brightness(2.2); }
+
+/* Ambient flicker (optional toggle via JS) */
+body.flicker-on {
+  animation: flicker 0.7s infinite;
 }
 
+@keyframes flicker {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  50%      { opacity: 0.4; filter: brightness(2.1); }
+}
 
+/* Ambient glitch with long gaps */
 @keyframes glitch-flag {
-  0%   {
-    background-image: url('/Media/pa-flag.png');
-    filter: hue-rotate(0deg) contrast(1.2);
-  }
-  25%  {
-    background-image: url('/Media/Gadsen-flag.png');
-    filter: hue-rotate(80deg) contrast(1.5);
-  }
-  50%  {
-    background-image: url('/Media/pa-rebellion-flag.png');
-    filter: hue-rotate(180deg) saturate(1.3);
-  }
-  75%  {
-    background-image: url('/Media/gadsen-flag.png');
-    filter: hue-rotate(-40deg) contrast(1.6);
-  }
-  100% {
-    background-image: url('/Media/pa-flag.png');
-    filter: hue-rotate(0deg) contrast(1.1);
-  }
+  0%   { background-image: none; background-color: black; filter: none; }
+  3%   { background-image: url('/Media/gadsden-flag.png'); filter: hue-rotate(80deg) contrast(1.5); }
+  4%   { background-image: url('/Media/pa-rebellion-flag.png'); filter: hue-rotate(-40deg) contrast(1.6); }
+  5%   { background-image: none; background-color: black; filter: none; }
+  100% { background-image: none; background-color: black; filter: none; }
 }
 
 body.glitch-flag {
-  animation: glitch-flag 8s infinite;
+  animation: glitch-flag 45s infinite;
 }
 
+/* Triggered glitch for user input */
+body.glitch-now {
+  animation: glitch-flag 2s ease-in-out;
+}
+
+/* Scanlines */
 body::before {
   content: "";
   position: fixed;
