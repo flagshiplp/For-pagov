@@ -24,9 +24,9 @@ body.flicker-on {
 /* Ambient glitch with long gaps */
 @keyframes glitch-flag {
   0%   { background-image: none; background-color: black; filter: none; }
-  3%   { background-image: url('/Media/gadsden-flag.png'); filter: hue-rotate(80deg) contrast(1.5); }
-  4%   { background-image: url('/Media/pa-rebellion-flag.png'); filter: hue-rotate(-40deg) contrast(1.6); }
-  5%   { background-image: none; background-color: black; filter: none; }
+  25%  { background-image: url('/Media/gadsden-flag.png'); filter: hue-rotate(80deg) contrast(1.5); }
+  50%  { background-image: url('/Media/pa-rebellion-flag.png'); filter: hue-rotate(-40deg) contrast(1.6); }
+  75%  { background-image: none; background-color: black; filter: none; }
   100% { background-image: none; background-color: black; filter: none; }
 }
 
@@ -36,7 +36,7 @@ body.glitch-flag {
 
 /* Triggered glitch for user input */
 body.glitch-now {
-  animation: glitch-flag 2s ease-in-out;
+  animation: glitch-flag 0.6s ease-in-out forwards;
 }
 
 /* Scanlines */
