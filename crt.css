@@ -4,7 +4,7 @@ body {
   color: #00FF00;
   font-family: 'Courier New', monospace;
   text-shadow: 0 0 2px #00FF00;
-  animation: flicker .3s infinite;
+  animation: flicker .6s infinite;
   background: url('/Media/pa-flag.png') no-repeat center center fixed;
   background-size: cover;
   min-height: 100vh;
