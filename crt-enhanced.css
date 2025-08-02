@@ -20,7 +20,7 @@ body {
 
 @keyframes glitch-flag {
   0% { background-image: url('/media/pa-flag.png'); }
-  25% { background-image: url('/media/gadsden-flag.png'); }
+  25% { background-image: url('/media/gadsen-flag.png'); }
   50% { background-image: url('/media/pa-rebellion-flag.png'); }
   75% { background-image: url('/media/gadsden-flag.png'); }
   100% { background-image: url('/media/pa-flag.png'); }
