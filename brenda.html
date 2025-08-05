@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fix Frozen Mac Display</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 2rem;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    pre {
+      background: #f1f1f1;
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: none;
+      background-color: #007aff;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005ecb;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fix Display Bug on Mac Login</h1>
+
+  <p>Follow these steps carefully. This will help reset your Mac’s display preferences if it's stuck on a black or frozen screen.</p>
+
+  <h2>Step 1 – Open Terminal</h2>
+  <p>From the top menu bar, choose: <strong>Utilities → Terminal</strong></p>
+
+  <h2>Step 2 – Paste This Command</h2>
+  <p>This removes the file that may be causing the display issue.</p>
+
+  <pre id="command">rm /Volumes/Macintosh\ HD/Library/Preferences/com.apple.windowserver.plist</pre>
+
+  <button onclick="copyCommand()">📋 Copy Command</button>
+
+  <p>Then press <strong>Return</strong> in Terminal. You can now restart your Mac.</p>
+
+  <script>
+    function copyCommand() {
+      const cmd = document.getElementById('command').innerText;
+      navigator.clipboard.writeText(cmd).then(() => {
+        alert("Copied! Now paste into Terminal and hit Return.");
+      }, () => {
+        alert("Copy failed. Just highlight and copy manually.");
+      });
+    }
+  </script>
+</body>
+</html>
